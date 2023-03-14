@@ -14,12 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: configure
-      run: |
-        cl main.c
-        main
+      run: gcc -o main main.c
     - name: make
-      run: make
-    - name: make check
-      run: make check
+      run: ./main
     - name: make distcheck
       run: make distcheck
